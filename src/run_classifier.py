@@ -14,9 +14,9 @@ import json
 import os
 import sys
 import tempfile
-import tokenization_sentencepiece as tokenization
+from . import tokenization_sentencepiece as tokenization
 import tensorflow as tf
-import utils
+from . import utils
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
 CONFIGPATH = os.path.join(CURDIR, os.pardir, 'config.ini')
