@@ -248,6 +248,12 @@ class LivedoorProcessor(DataProcessor):
             InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
 
+class PubrProcessor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["国内", "海外", "経済", "テック", "芸能", "スポーツ", "文化", "暮らし"]
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
@@ -660,6 +666,7 @@ def main(_):
 
   processors = {
       "livedoor": LivedoorProcessor,
+      "pubr": PubrProcessor
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
