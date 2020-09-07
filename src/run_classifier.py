@@ -673,7 +673,8 @@ def main(_):
 
   processors = {
       "livedoor": LivedoorProcessor,
-      "pubr": PubrProcessor
+      "pubr": PubrProcessor,
+      "pubr_category100": Pubr100Processor
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
