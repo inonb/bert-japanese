@@ -255,6 +255,13 @@ class PubrProcessor(LivedoorProcessor):
     """See base class."""
     return ["国内", "海外", "経済", "テック", "芸能", "スポーツ", "文化", "暮らし"]
 
+class Pubr100Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["101", "102", "103", "104", "105", "106"]
+
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
   """Converts a single `InputExample` into a single `InputFeatures`."""
