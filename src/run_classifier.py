@@ -14,9 +14,9 @@ import json
 import os
 import sys
 import tempfile
-import tokenization_sentencepiece as tokenization
+from . import tokenization_sentencepiece as tokenization
 import tensorflow as tf
-import utils
+from . import utils
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
 CONFIGPATH = os.path.join(CURDIR, os.pardir, 'config.ini')
@@ -260,7 +260,7 @@ class Pubr100Processor(LivedoorProcessor):
 
   def get_labels(self):
     """See base class."""
-    return ["101", "102", "103", "104", "105", "106"]
+    return ["100", "101", "102", "103", "104", "105", "106"]
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
