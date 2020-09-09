@@ -16,13 +16,8 @@ import sys
 import tempfile
 import tensorflow as tf
 
-if __package__ == None:
-  import tokenization_sentencepiece as tokenization
-  import utils
-else:
-  # For embedding server
-  from . import tokenization_sentencepiece as tokenization
-  from . import utils
+import tokenization_sentencepiece as tokenization
+import utils
 
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
