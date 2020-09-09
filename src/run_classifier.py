@@ -16,14 +16,8 @@ import sys
 import tempfile
 import tensorflow as tf
 
-if __name__ == "__main__":
-  import tokenization_sentencepiece as tokenization
-  import utils
-else:
-  # For embedding server
-  from . import tokenization_sentencepiece as tokenization
-  from . import utils
-
+from . import tokenization_sentencepiece as tokenization
+from . import utils
 
 CURDIR = os.path.dirname(os.path.abspath(__file__))
 CONFIGPATH = os.path.join(CURDIR, os.pardir, 'config.ini')
