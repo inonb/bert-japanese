@@ -264,6 +264,20 @@ class Pubr100Processor(LivedoorProcessor):
     """See base class."""
     return ["100", "101", "102", "103", "104", "105", "106"]
 
+class Pubr200Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["200", "201", "202", "203", "204", "205", "206", "207"]
+
+class Pubr300Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["300", "301", "302", "303", "304", "305", "306", "307", "308", "309"]
+
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
   """Converts a single `InputExample` into a single `InputFeatures`."""
