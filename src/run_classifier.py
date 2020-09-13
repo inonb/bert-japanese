@@ -250,56 +250,56 @@ class LivedoorProcessor(DataProcessor):
             InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
     return examples
 
-class PubrProcessor(LivedoorProcessor):
+class CategoryProcessor(LivedoorProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["国内", "海外", "経済", "テック", "芸能", "スポーツ", "文化", "暮らし"]
 
-class Pubr100Processor(LivedoorProcessor):
+class Category100Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["100", "101", "102", "103", "104", "105", "106"]
 
-class Pubr200Processor(LivedoorProcessor):
+class Category200Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["200", "201", "202", "203", "204", "205", "206", "207"]
 
-class Pubr300Processor(LivedoorProcessor):
+class Category300Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["300", "301", "302", "303", "304", "305", "306", "307", "308", "309"]
 
-class Pubr400Processor(LivedoorProcessor):
+class Category400Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["400", "401", "402", "403", "404", "405", "406"]
 
-class Pubr500Processor(LivedoorProcessor):
+class Category500Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["500", "501", "502", "503", "504", "505", "506", "507"]
 
-class Pubr600Processor(LivedoorProcessor):
+class Category600Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
     return ["600", "601", "602", "603", "604", "605", "606", "607"]
 
-class Pubr700Processor(LivedoorProcessor):
+class Category700Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
@@ -717,15 +717,14 @@ def main(_):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   processors = {
-      "livedoor": LivedoorProcessor,
-      "pubr": PubrProcessor,
-      "pubr_category100": Pubr100Processor,
-      "pubr_category200": Pubr200Processor,
-      "pubr_category300": Pubr300Processor,
-      "pubr_category400": Pubr400Processor,
-      "pubr_category500": Pubr500Processor,
-      "pubr_category600": Pubr600Processor,
-      "pubr_category700": Pubr700Processor
+      "category": CategoryProcessor,
+      "category100": Category100Processor,
+      "category200": Category200Processor,
+      "category300": Category300Processor,
+      "category400": Category400Processor,
+      "category500": Category500Processor,
+      "category600": Category600Processor,
+      "category700": Category700Processor
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
