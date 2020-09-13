@@ -290,21 +290,21 @@ class Category500Processor(CategoryProcessor):
 
   def get_labels(self):
     """See base class."""
-    return ["500", "501", "502", "503", "504", "505", "506", "507"]
+    return ["500", "501", "502"]
 
 class Category600Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
-    return ["600", "601", "602", "603", "604", "605", "606", "607"]
+    return ["600", "601", "602", "603", "604", "605", "606"]
 
 class Category700Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
 
   def get_labels(self):
     """See base class."""
-    return ["700", "701", "702", "703", "704", "705", "706", "707", "708", "709", "710"]
+    return ["700", "701", "702", "703", "704"]
 
      
 def convert_single_example(ex_index, example, label_list, max_seq_length,
