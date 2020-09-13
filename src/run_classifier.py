@@ -278,6 +278,35 @@ class Pubr300Processor(LivedoorProcessor):
     """See base class."""
     return ["300", "301", "302", "303", "304", "305", "306", "307", "308", "309"]
 
+class Pubr400Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["400", "401", "402", "403", "404", "405", "406"]
+
+class Pubr500Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["500", "501", "502", "503", "504", "505", "506", "507"]
+
+class Pubr600Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["600", "601", "602", "603", "604", "605", "606", "607"]
+
+class Pubr700Processor(LivedoorProcessor):
+  """Processor for the Pubr data set."""
+
+  def get_labels(self):
+    """See base class."""
+    return ["700", "701", "702", "703", "704", "705", "706", "707", "708", "709", "710"]
+
+     
 def convert_single_example(ex_index, example, label_list, max_seq_length,
                            tokenizer):
   """Converts a single `InputExample` into a single `InputFeatures`."""
@@ -690,7 +719,13 @@ def main(_):
   processors = {
       "livedoor": LivedoorProcessor,
       "pubr": PubrProcessor,
-      "pubr_category100": Pubr100Processor
+      "pubr_category100": Pubr100Processor,
+      "pubr_category200": Pubr200Processor,
+      "pubr_category300": Pubr300Processor,
+      "pubr_category400": Pubr400Processor,
+      "pubr_category500": Pubr500Processor,
+      "pubr_category600": Pubr600Processor,
+      "pubr_category700": Pubr700Processor
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
