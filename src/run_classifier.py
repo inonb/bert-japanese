@@ -283,7 +283,7 @@ class Category400Processor(CategoryProcessor):
 
   def get_labels(self):
     """See base class."""
-    return ["400", "401", "402", "403", "404", "405", "406"]
+    return ["400", "401", "402", "403", "404"]
 
 class Category500Processor(CategoryProcessor):
   """Processor for the Pubr data set."""
